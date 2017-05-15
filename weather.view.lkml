@@ -61,6 +61,15 @@ view: weather {
   dimension: temperature {
     label: "Temperature (F)"
     type: number
+    value_format: "0"
+    sql: ${TABLE}.weather_temperature ;;
+  }
+
+  dimension:  temperature_tiered {
+    label: "Temperature (Tiered)"
+    type: tier
+    tiers: [25,35,45,55,65,75,85,95]
+    value_format: "0"
     sql: ${TABLE}.weather_temperature ;;
   }
 
